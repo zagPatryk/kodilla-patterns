@@ -36,6 +36,15 @@ public class Bigmac {
         }
 
         public Bigmac build() {
+            if (roll == null) {
+                System.out.println("Musisz wybrać bułkę");
+                setRoll(Roll.SESAME_ROLL);
+            }
+
+            if (burgersNumber < 1) {
+                System.out.println("Musisz wziać chociaż 1 burger");
+                setBurgersNumber(1);
+            }
             return new Bigmac(roll, burgersNumber, sauce, ingredients);
         }
     }
@@ -56,6 +65,8 @@ public class Bigmac {
                 ", ingredients=" + ingredients +
                 '}';
     }
+
+
 
     public Roll getRoll() {
         return roll;

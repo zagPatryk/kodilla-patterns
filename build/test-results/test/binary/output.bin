@@ -1,1 +1,2 @@
-WBigmac{roll=SESAME_ROLL, burgersNumber=2, sauce=BARBECUE, ingredients=[BACON, CHILI]}
+&Musisz wziaÄ‡ chociaĹĽ 1 burger
+WBigmac{roll=SESAME_ROLL, burgersNumber=1, sauce=BARBECUE, ingredients=[BACON, CHILI]}

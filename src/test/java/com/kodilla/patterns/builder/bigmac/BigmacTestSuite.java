@@ -9,7 +9,7 @@ public class BigmacTestSuite {
         //Given
         Bigmac bigmac = new Bigmac.BigmacBuilder()
                 .addIngredient(Ingredient.BACON)
-                .setBurgersNumber(2)
+                .setBurgersNumber(0)
                 .setRoll(Roll.SESAME_ROLL)
                 .setSauce(Sauce.BARBECUE)
                 .addIngredient(Ingredient.CHILI)
@@ -18,7 +18,7 @@ public class BigmacTestSuite {
         //When
 
         //Then
-        Assert.assertEquals(2, bigmac.getBurgersNumber());
+        Assert.assertEquals(1, bigmac.getBurgersNumber());
         Assert.assertEquals(2, bigmac.getIngredients().size());
         Assert.assertEquals(Roll.SESAME_ROLL, bigmac.getRoll());
         Assert.assertEquals(Sauce.BARBECUE, bigmac.getSauce());
