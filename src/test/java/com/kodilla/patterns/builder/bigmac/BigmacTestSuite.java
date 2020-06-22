@@ -5,15 +5,13 @@ import org.junit.Test;
 
 public class BigmacTestSuite {
     @Test
-    public void buildBigmacTest() {
+    public void buildBigmacTest() throws WrongBurgerNumberException {
         //Given
         Bigmac bigmac = new Bigmac.BigmacBuilder()
                 .addIngredient(Ingredient.BACON)
-                .setBurgersNumber(0)
-                .setRoll(Roll.SESAME_ROLL)
                 .setSauce(Sauce.BARBECUE)
                 .addIngredient(Ingredient.CHILI)
-                .build();
+                .build(Roll.SESAME_ROLL, 1);
         System.out.println(bigmac);
         //When
 

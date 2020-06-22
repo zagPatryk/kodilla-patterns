@@ -10,20 +10,20 @@ public class Bigmac {
     private final List<Ingredient> ingredients;
 
     public static class BigmacBuilder {
-        private Roll roll;
-        private int burgersNumber;
+//        private Roll roll;
+//        private int burgersNumber;
         private Sauce sauce;
         private List<Ingredient> ingredients = new ArrayList<>();
 
-        public BigmacBuilder setRoll(Roll roll) {
-            this.roll = roll;
-            return this;
-        }
-
-        public BigmacBuilder setBurgersNumber(int burgersNumber) {
-            this.burgersNumber = burgersNumber;
-            return this;
-        }
+//        public BigmacBuilder setRoll(Roll roll) {
+//            this.roll = roll;
+//            return this;
+//        }
+//
+//        public BigmacBuilder setBurgersNumber(int burgersNumber) {
+//            this.burgersNumber = burgersNumber;
+//            return this;
+//        }
 
         public BigmacBuilder setSauce(Sauce sauce) {
             this.sauce = sauce;
@@ -35,16 +35,12 @@ public class Bigmac {
             return this;
         }
 
-        public Bigmac build() {
-            if (roll == null) {
-                System.out.println("Musisz wybrać bułkę");
-                setRoll(Roll.SESAME_ROLL);
-            }
+        public Bigmac build(Roll roll, int burgersNumber) throws WrongBurgerNumberException {
 
             if (burgersNumber < 1) {
-                System.out.println("Musisz wziać chociaż 1 burger");
-                setBurgersNumber(1);
+                throw new WrongBurgerNumberException();
             }
+
             return new Bigmac(roll, burgersNumber, sauce, ingredients);
         }
     }
